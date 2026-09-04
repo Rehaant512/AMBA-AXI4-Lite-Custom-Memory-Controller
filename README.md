@@ -34,7 +34,7 @@ The external and internal logic utilizes the following key AXI4-Lite signals:
 The design includes a comprehensive, self-checking Verilog testbench (`axi4_lite_tb.v`). It features automated task-based stimulus (`axi_write`, `axi_read`), a 200 MHz simulated clock generation, and rigorous negative testing for edge-case memory access violations.
 
 ### Waveform Analysis
-The simulation proves correct non-blocking channel behavior and strict VALID/READY handshaking on the rising clock edge. It validates successful write data captures along with their corresponding `BRESP` assertions, and confirms accurate zero-latency memory reads via the `RDATA` bus.
+The simulation proves correct non-blocking channel behavior and strict VALID/READY handshaking on the rising clock edge. It validates successful write data captures along with their corresponding `BRESP` assertions, and confirms correctly pipelined memory reads via the registered RDATA path, designed for Block RAM inference on FPGA targets.
 
 <img width="1547" height="657" alt="Screenshot 2026-09-03 234602" src="https://github.com/user-attachments/assets/c8a17aea-1b75-486e-978b-e479a73295ec" />
 
